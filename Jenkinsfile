@@ -6,9 +6,9 @@ pipeline {
         }
     }
     stages {
-        stage('Build') { 
+        stage('Build & SonarQube') { 
             steps {
-    	        withSonarQubeEnv('http://localhost:19000') {
+    	        withSonarQubeEnv('http://admin:admin@localhost:19000') {
                 sh 'mvn -B -DskipTests clean package sonar:sonar' 
 		}
             }
