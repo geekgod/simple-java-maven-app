@@ -8,12 +8,10 @@ pipeline {
     stages {
         stage('Build') { 
             steps {
-                sh 'mvn -B -DskipTests clean package' 
+    	        withSonarQubeEnv('http://localhost:19000') {
+                sh 'mvn -B -DskipTests clean package sonar:sonar' 
+		}
             }
         }
-	stage('build & SonarQube Scan') {
-    		withSonarQubeEnv('http://localhost:1900') {
-      		sh 'mvn clean package sonar:sonar'
-    	} // SonarQube task
     }
 }
