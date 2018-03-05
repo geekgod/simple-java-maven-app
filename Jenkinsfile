@@ -6,12 +6,10 @@ pipeline {
         }
     }
     stages {
-        stage('Build & SonarQube') { 
+        stage('Build') { 
             steps {
-    	//        withSonarQubeEnv('http://admin:admin@localhost:19000') {
                 sh 'mvn -B -DskipTests clean package' 
 		}
-            }
         }
     }
 }
