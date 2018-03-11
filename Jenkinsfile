@@ -11,10 +11,6 @@ pipeline {
                 sh 'mvn -B -DskipTests clean package' 
             }
         }
-        stage('Sonar') {
-            steps {
-            }
-        }
 	stage('Test') {
             steps {
                 sh 'mvn test'
