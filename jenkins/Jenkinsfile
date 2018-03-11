@@ -11,7 +11,7 @@ pipeline {
                 sh 'mvn -B -DskipTests clean package'
             }
         }
-        stage('Sonar') {
+        stage('SonarQube') {
             steps {
                  mvn sonar:sonar -Dsonar.host.url=http://172.22.0.3:9000 -Dsonar.login=7c2961db0360b230da8a36f4fa3e9e1d9f52c912
             }
