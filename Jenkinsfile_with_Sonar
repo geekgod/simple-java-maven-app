@@ -11,6 +11,12 @@ pipeline {
                 sh 'mvn -B -DskipTests clean package' 
             }
         }
+	stage('Sonar') {
+            steps {
+                sh 'mvn sonar:sonar -Dsonar.host.url=http://172.22.0.3'
+            }
+        }
+
 	stage('Test') {
             steps {
                 sh 'mvn test'
