@@ -7,6 +7,7 @@ public class App
 {
 
     private final String message = "Hello World 5!";
+    // Add extra name
     private final String name = "Geekgod";
 
     public App() {}
